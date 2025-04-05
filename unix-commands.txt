@@ -1,2 +1,5 @@
+#Access controle list
+ - setfacl
+ - getfacl #exemple: getfacl file3.txt 
+
 whatis #Small man
-test
