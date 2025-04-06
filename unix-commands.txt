@@ -2,4 +2,6 @@
  - setfacl
  - getfacl #exemple: getfacl file3.txt 
 
-whatis #Small man
+- whatis #Small man
+
+- tee #Standard output to a file. exemple: ls | tee 123  
