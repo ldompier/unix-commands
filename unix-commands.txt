@@ -13,3 +13,9 @@
 - more (cat par page), cat, less(top and bottom), head -2 file.txt(2 first lines), tail -2 file.txt(2 end lines)
 
 - cut, awk
+
+- egrep
+
+-sort / uniq
+
+- wc
