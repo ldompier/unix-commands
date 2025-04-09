@@ -18,4 +18,8 @@
 
 -sort / uniq
 
-- wc
+- wc (count)
+
+- diff, cmp (compare byte by byte)
+
+- tar cvf folder_name.tar (contract).   tar xvf folder_name.tar (extract), gzip, gunzip
