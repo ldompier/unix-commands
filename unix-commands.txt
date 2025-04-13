@@ -25,3 +25,7 @@
 - tar cvf folder_name.tar (contract).   tar xvf folder_name.tar (extract), gzip, gunzip
 
 - truncate -s 40 nom du fichier.
+
+- cat file1.txt file2.txt > fileAll.txt, split
+
+
