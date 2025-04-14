@@ -24,8 +24,19 @@
 
 - tar cvf folder_name.tar (contract).   tar xvf folder_name.tar (extract), gzip, gunzip
 
-- truncate -s 40 nom du fichier.
+- truncate -s 40 nom du fichier
 
 - cat file1.txt file2.txt > fileAll.txt, split
 
+- useradd, groupadd, userdel, groupdel, usermod
 
+- date, uptime, hostname, uname, which, cal, bc
+
+- systemctl, ps, top, kill, crontab, at (like cron, one time basis)
+  - systemctl start|stop|status servicename
+  - system enable servicename
+  - systemctl restart|reload servicename
+  - systemctl list-units --all
+  - systemctl list-units --type=service --state=active
+
+  
