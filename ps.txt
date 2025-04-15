@@ -1,0 +1,29 @@
+==============================
+ Commandes principales avec ps
+==============================
+
+🔹 Commandes de base
+--------------------
+ps                     : Affiche les processus de l'utilisateur courant
+ps -e / ps -A          : Affiche tous les processus
+ps -f                  : Format complet (PID, PPID, UID, etc.)
+ps -ef                 : Tous les processus en format complet
+ps aux                 : Format BSD, très utilisé
+ps -u <utilisateur>    : Processus d'un utilisateur spécifique
+ps -p <PID>            : Infos d’un processus spécifique
+
+🔹 Filtres et options utiles
+----------------------------
+ps -u luc                                : Processus de l'utilisateur 'luc'
+ps -C java                               : Processus dont le nom est 'java'
+ps -o pid,ppid,cmd,%mem,%cpu             : Affichage personnalisé
+ps -eo pid,comm,%mem,%cpu --sort=-%cpu   : Trie par usage CPU
+ps --forest                              : Affiche la hiérarchie des processus
+ps -ef | grep <nom>                      : Filtre par nom de processus
+
+🔹 Commandes combinées utiles
+-----------------------------
+ps aux --sort=-%mem | head               : Top consommateurs mémoire
+ps aux --sort=-%cpu | head               : Top consommateurs CPU
+ps -eo pid,user,args --forest            : Vue en arbre des processus
+ps -ef | grep sshd                       : Voir un processus spécifique
