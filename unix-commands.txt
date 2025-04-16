@@ -40,5 +40,7 @@
   - systemctl list-units --type=service --state=active
 
 
+- ps
 
+- kill
   

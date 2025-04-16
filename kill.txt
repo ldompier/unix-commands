@@ -1,0 +1,39 @@
+=============================
+ Commandes principales avec kill
+=============================
+
+🔹 Commandes de base
+--------------------
+kill <PID>                 : Envoie le signal SIGTERM (15) à un processus
+kill -9 <PID>              : Envoie SIGKILL (9), tue immédiatement le processus
+kill -SIGSTOP <PID>        : Stoppe un processus (comme pause)
+kill -SIGCONT <PID>        : Relance un processus stoppé
+kill -l                    : Liste tous les signaux disponibles
+
+🔹 Signaux courants
+-------------------
+Nom         Numéro    Description
+----        ------    -----------
+SIGHUP      1         Recharger la configuration (ex: pour les daemons)
+SIGINT      2         Interruption (comme Ctrl+C)
+SIGQUIT     3         Quitter et générer un core dump
+SIGKILL     9         Tue immédiatement, **ne peut pas être ignoré**
+SIGTERM     15        Demande d'arrêt "gracieuse" (par défaut)
+SIGSTOP     19        Stoppe un processus (ne peut pas être ignoré)
+SIGCONT     18        Continue un processus stoppé
+SIGUSR1     10        Signal utilisateur 1 (usage personnalisé)
+SIGUSR2     12        Signal utilisateur 2 (usage personnalisé)
+
+🔹 Exemples pratiques
+---------------------
+kill -15 1234           : Envoie SIGTERM au processus 1234
+kill -9 1234            : Envoie SIGKILL au processus 1234
+kill -SIGSTOP 1234      : Met le processus 1234 en pause
+kill -SIGCONT 1234      : Relance le processus 1234
+kill -USR1 1234         : Envoie SIGUSR1 au processus 1234
+
+🔹 Astuces
+----------
+- Utiliser `ps` ou `htop` pour trouver le PID du processus à tuer
+- `pkill <nom>`         : Tue un processus par son nom
+- `killall <nom>`       : Tue tous les processus avec un nom donné
