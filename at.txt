@@ -1,0 +1,43 @@
+=============================
+ Commandes principales avec at
+=============================
+
+🔹 Description
+--------------
+`at` permet de planifier l'exécution d'une commande une seule fois à un moment donné.
+
+🔹 Commandes de base
+--------------------
+at <heure> [date]           : Planifie une commande à exécuter à l'heure/date spécifiée
+atq                          : Liste les tâches planifiées pour l'utilisateur courant
+atrm <job_id>               : Supprime une tâche planifiée
+at -l                       : Alias de `atq`
+at -c <job_id>              : Affiche le contenu de la tâche planifiée
+
+🔹 Exemples
+-----------
+at 14:00                    : Planifie une commande pour 14h aujourd'hui
+at now + 1 minute           : Dans une minute
+at 08:30 AM tomorrow        : Demain matin à 8h30
+at 5pm + 2 days             : Dans deux jours à 17h
+echo "shutdown -h now" | at now + 1 minute  : Exécute un arrêt dans une minute
+
+🔹 Syntaxes valides pour la date/heure
+--------------------------------------
+- now + N minutes/hours/days
+- HH:MM
+- midnight / noon / teatime
+- tomorrow
+- DD.MM.YY ou MM/DD/YY
+- day name (e.g. `at 4pm Friday`)
+
+🔹 Astuces
+----------
+- Utiliser `echo "<commande>" | at <heure>` pour planifier une tâche
+- Le démon `atd` doit être actif pour exécuter les tâches (`systemctl start atd`)
+- Les fichiers `/etc/at.allow` et `/etc/at.deny` peuvent restreindre l'utilisation
+- Pas d'édition interactive comme `crontab` : chaque tâche est unique
+
+🔹 Voir les logs
+----------------
+- journalctl -u atd         : Journal systemd des tâches at
