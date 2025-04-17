@@ -1,0 +1,44 @@
+=============================
+ Commandes principales avec crontab
+=============================
+
+🔹 Commandes de base
+--------------------
+crontab -l                : Affiche le contenu du crontab de l'utilisateur courant
+crontab -e                : Édite le crontab de l'utilisateur courant avec l'éditeur par défaut
+crontab -r                : Supprime le crontab de l'utilisateur courant
+crontab -u <user> -l      : Liste le crontab d’un autre utilisateur (nécessite sudo)
+crontab -u <user> -e      : Édite le crontab d’un autre utilisateur (nécessite sudo)
+
+🔹 Format d'une ligne de cron
+-----------------------------
+# ┌──────── minute (0 - 59)
+# │ ┌────── heure (0 - 23)
+# │ │ ┌──── jour du mois (1 - 31)
+# │ │ │ ┌── mois (1 - 12)
+# │ │ │ │ ┌─ jour de la semaine (0 - 7) (0 ou 7 = dimanche)
+# │ │ │ │ │
+# * * * * * commande à exécuter
+
+🔹 Exemples de crons
+--------------------
+* * * * * /path/script.sh                : Toutes les minutes
+*/5 * * * * /path/script.sh              : Toutes les 5 minutes
+0 * * * * /path/script.sh                : À chaque heure pile
+0 6 * * * /path/script.sh                : Tous les jours à 6h
+0 0 * * 0 /path/script.sh                : Chaque dimanche à minuit
+0 0 1 * * /path/script.sh                : Le premier jour de chaque mois à minuit
+0 9-17 * * 1-5 /path/script.sh           : Toutes les heures de 9h à 17h du lundi au vendredi
+
+🔹 Astuces
+----------
+- Rediriger la sortie :
+  * `>> /chemin/log.txt 2>&1` pour loguer la sortie standard et erreur
+- Utiliser `crontab -e` pour chaque utilisateur
+- L’environnement cron est minimal (penser à définir les chemins ou charger `.bashrc`)
+
+🔹 Voir les logs
+----------------
+- /var/log/syslog          (Debian/Ubuntu)
+- /var/log/cron            (RHEL/CentOS)
+- journalctl -u cron       (systemd)
