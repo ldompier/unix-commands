@@ -63,3 +63,5 @@
 - script (record all command and output)
 
 - sudo sos report
+
+- printevn or env, ECHO $SHELL
