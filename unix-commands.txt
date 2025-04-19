@@ -47,4 +47,19 @@
 - at
 
 - crontab
+
+- df, dmesg, iostat, ip route | column -t 
+
+- cat /proc/cpuinfo, cat /proc/meminfo
   
+- /var/log
+
+-shutdown, init, reboot, halt
+
+- hostnamectl set-hostname newhostname (etc/hostname)
+
+- uname, dmidecode
+
+- script (record all command and output)
+
+- sudo sos report
