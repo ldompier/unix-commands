@@ -54,7 +54,7 @@
   
 - /var/log
 
--shutdown, init, reboot, halt
+- shutdown, init, reboot, halt
 
 - hostnamectl set-hostname newhostname (etc/hostname)
 
@@ -64,4 +64,8 @@
 
 - sudo sos report
 
-- printevn or env, ECHO $SHELL
+- printevn or env, ECHO $SHELL: env | more
+
+- cat $0 (to know witch shell is used), cat /etc/shells (to see witch shells are available)
+  cat /etc/passwd (to see witch shell is assign to me) 
+- ip a (pour voir son propre address ip)
