@@ -69,3 +69,5 @@
 - cat $0 (to know witch shell is used), cat /etc/shells (to see witch shells are available)
   cat /etc/passwd (to see witch shell is assign to me) 
 - ip a (pour voir son propre address ip)
+
+- 
